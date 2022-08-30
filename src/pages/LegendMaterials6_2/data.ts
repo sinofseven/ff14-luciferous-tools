@@ -1,0 +1,58 @@
+import { DataTimedMaterial } from "../../components/TimedMaterial";
+
+export const LegendMaterials: DataTimedMaterial[] = [
+  {
+    name: "ミロバラン",
+    image: "LegendMaterials6_2/haritaki.png",
+    map: "サベネア島",
+    aetheryte: "イェドリマン",
+    isMiner: false,
+    start: 0,
+    end: 2,
+  },
+  {
+    name: "パルダオ原木",
+    image: "LegendMaterials6_2/paldao-log.png",
+    map: "エルピス",
+    aetheryte: "十二節の園",
+    isMiner: false,
+    start: 2,
+    end: 4,
+  },
+  {
+    name: "渋木",
+    image: "LegendMaterials6_2/bayberry.png",
+    map: "ラヴィリンソス",
+    aetheryte: "アルケイオン保管院",
+    isMiner: false,
+    start: 4,
+    end: 6,
+  },
+  {
+    name: "ルチルクォーツ原石",
+    image: "LegendMaterials6_2/raw-rutilated-quartz.png",
+    map: "ガレマルド",
+    aetheryte: "テルティウム駅",
+    isMiner: true,
+    start: 6,
+    end: 8,
+  },
+  {
+    name: "イルメナイト",
+    image: "LegendMaterials6_2/ilmenite.png",
+    map: "嘆きの海",
+    aetheryte: "ベストウェイバロー",
+    isMiner: true,
+    start: 8,
+    end: 10,
+  },
+  {
+    name: "灰緑珪藻土",
+    image: "LegendMaterials6_2/ash-diatomite.png",
+    map: "ラヴィリンソス",
+    aetheryte: "アポリア本部",
+    isMiner: true,
+    start: 10,
+    end: 12,
+  },
+];
