@@ -34,7 +34,9 @@ const App: FC = () => {
         <div className="content has-text-centered">
           <p>
             created by sinofseven. The source code is licensed{" "}
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The source code is
+            hosted by <a href="https://github.com/sinofseven/ff14-luciferous-tools">GitHub</a> and{" "}
+            <a href="https://www.netlify.com/">Netlify</a>.
           </p>
         </div>
       </footer>
