@@ -18,7 +18,9 @@ const findCurrentMaterial = (et: EorzeaTime): DataTimedMaterial => {
 const LegendMaterials6_2: FC<LegendMaterials6_2Props> = ({ et }) => {
   const current = findCurrentMaterial(et);
   const cards = LegendMaterials.map((item) => {
-    return <TimedMaterial et={et} material={item} isInlineBlock={true} key={item.name} />;
+    return (
+      <TimedMaterial et={et} material={item} isInlineBlock={true} key={item.name} isHalf={true} />
+    );
   });
   return (
     <>
@@ -30,7 +32,7 @@ const LegendMaterials6_2: FC<LegendMaterials6_2Props> = ({ et }) => {
               <p className="card-header-title">今の素材</p>
             </div>
           </div>
-          <TimedMaterial et={et} material={current} isInlineBlock={false} />
+          <TimedMaterial et={et} material={current} isInlineBlock={false} isHalf={true} />
         </div>
         <div className="column">{cards}</div>
       </div>

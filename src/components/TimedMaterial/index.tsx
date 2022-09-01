@@ -8,22 +8,17 @@ type TimedMaterialProps = {
   et: EorzeaTime;
   material: Material;
   isInlineBlock: boolean;
+  isHalf: boolean;
 };
 
-const createTimeLabel = (start: number, end: number): string => {
-  const longStart = (start + 12) % 24;
-  const longEnd = (end + 12) % 24;
-  return [
-    [start, end].map(convertNumberToDigit2).join("~") + "時",
-    [longStart, longEnd].map(convertNumberToDigit2).join("~") + "時",
-  ].join(", ");
-};
-
-const TimedMaterial: FC<TimedMaterialProps> = ({ et, material, isInlineBlock }) => {
-  const hourEt = et.getHours() % 12;
+const TimedMaterial: FC<TimedMaterialProps> = ({ et, material, isInlineBlock, isHalf }) => {
+  let hourEt = et.getHours();
+  if (isHalf) {
+    hourEt = hourEt % 12;
+  }
   const isDanger = material.start <= hourEt && hourEt < material.end;
   const jobIcon = material.isMiner ? "Miner.png" : "Botanist.png";
-  const timeLabel = createTimeLabel(material.start, material.end);
+  const timeLabel = [material.start, material.end].map(convertNumberToDigit2).join("~") + "時";
   return (
     <Presenter
       jobIcon={jobIcon}

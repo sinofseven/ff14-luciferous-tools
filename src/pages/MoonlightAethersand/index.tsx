@@ -13,10 +13,12 @@ const MoonlightAethersand: FC<MoonlightAethersandProps> = ({ et }) => {
   const currentMaterial = TargetMaterials.find((item) => item.start <= hourEt && hourEt < item.end);
   const currentCard =
     currentMaterial == null ? null : (
-      <TimedMaterial et={et} material={currentMaterial} isInlineBlock={false} />
+      <TimedMaterial et={et} material={currentMaterial} isInlineBlock={false} isHalf={false} />
     );
   const arrayCards = TargetMaterials.map((item) => {
-    return <TimedMaterial et={et} material={item} isInlineBlock={true} key={item.name} />;
+    return (
+      <TimedMaterial et={et} material={item} isInlineBlock={true} key={item.name} isHalf={false} />
+    );
   });
   return (
     <>
