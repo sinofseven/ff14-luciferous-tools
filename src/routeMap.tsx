@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import Home from "./pages/Home";
 import LegendMaterials6_2 from "./pages/LegendMaterials6_2";
 import MoonlightAethersand from "./pages/MoonlightAethersand";
+import IslandPotionAndPowder from "./pages/IslandPotionAndPowder";
 
 type SourceState = {
   et: EorzeaTime;
@@ -29,5 +30,10 @@ export const routingMap: RouteNode[] = [
     name: "暁月の霊砂",
     path: "/moonlight-aethersand",
     element: (ss) => <MoonlightAethersand et={ss.et} />,
+  },
+  {
+    name: "無人島: ポーションと火薬の必要材料数",
+    path: "/island-potion-and-powder",
+    element: (ss) => <IslandPotionAndPowder />,
   },
 ];
