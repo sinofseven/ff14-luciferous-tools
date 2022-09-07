@@ -7,8 +7,14 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "サベネア島",
     aetheryte: "イェドリマン",
     isMiner: false,
-    start: 0,
-    end: 2,
+    rangeFirst: {
+      start: 0,
+      end: 2,
+    },
+    rangeSecond: {
+      start: 12,
+      end: 14,
+    },
   },
   {
     name: "パルダオ原木",
@@ -16,8 +22,14 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "エルピス",
     aetheryte: "十二節の園",
     isMiner: false,
-    start: 2,
-    end: 4,
+    rangeFirst: {
+      start: 2,
+      end: 4,
+    },
+    rangeSecond: {
+      start: 14,
+      end: 16,
+    },
   },
   {
     name: "渋木",
@@ -25,8 +37,14 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "ラヴィリンソス",
     aetheryte: "アルケイオン保管院",
     isMiner: false,
-    start: 4,
-    end: 6,
+    rangeFirst: {
+      start: 4,
+      end: 6,
+    },
+    rangeSecond: {
+      start: 16,
+      end: 18,
+    },
   },
   {
     name: "ルチルクォーツ原石",
@@ -34,8 +52,14 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "ガレマルド",
     aetheryte: "テルティウム駅",
     isMiner: true,
-    start: 6,
-    end: 8,
+    rangeFirst: {
+      start: 6,
+      end: 8,
+    },
+    rangeSecond: {
+      start: 18,
+      end: 20,
+    },
   },
   {
     name: "イルメナイト",
@@ -43,8 +67,14 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "嘆きの海",
     aetheryte: "ベストウェイバロー",
     isMiner: true,
-    start: 8,
-    end: 10,
+    rangeFirst: {
+      start: 8,
+      end: 10,
+    },
+    rangeSecond: {
+      start: 20,
+      end: 22,
+    },
   },
   {
     name: "灰緑珪藻土",
@@ -52,7 +82,13 @@ export const LegendMaterials: DataTimedMaterial[] = [
     map: "ラヴィリンソス",
     aetheryte: "アポリア本部",
     isMiner: true,
-    start: 10,
-    end: 12,
+    rangeFirst: {
+      start: 10,
+      end: 12,
+    },
+    rangeSecond: {
+      start: 22,
+      end: 24,
+    },
   },
 ];

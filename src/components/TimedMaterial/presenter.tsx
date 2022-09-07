@@ -7,6 +7,7 @@ type PresenterProps = {
   nameMap: string;
   nameAetheryte: string;
   timeLabel: string;
+  intervalLabel: string;
   isDanger: boolean;
   isInlineBlock: boolean;
 };
@@ -18,6 +19,7 @@ const Presenter: FC<PresenterProps> = ({
   nameMap,
   nameAetheryte,
   timeLabel,
+  intervalLabel,
   isDanger,
   isInlineBlock,
 }) => {
@@ -27,7 +29,7 @@ const Presenter: FC<PresenterProps> = ({
     rootClass += " has-background-danger";
   }
   return (
-    <div className={rootClass} style={{ width: "250px", margin: "1rem", display }}>
+    <div className={rootClass} style={{ width: "250px", margin: "0.5rem", display }}>
       <div className="card-header">
         <div className="card-header-icon">
           <span className="icon">
@@ -47,6 +49,7 @@ const Presenter: FC<PresenterProps> = ({
             <li>{nameMap}</li>
             <li>{nameAetheryte}</li>
             <li>{timeLabel}</li>
+            <li className="is-family-monospace">{intervalLabel}</li>
           </ul>
         </div>
       </div>

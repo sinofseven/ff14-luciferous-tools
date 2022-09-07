@@ -7,8 +7,10 @@ export const TargetMaterials: DataTimedMaterial[] = [
     map: "嘆きの海",
     aetheryte: "涙の入り江",
     isMiner: true,
-    start: 0,
-    end: 4,
+    rangeFirst: {
+      start: 0,
+      end: 4,
+    },
   },
   {
     name: "水瓶土",
@@ -16,7 +18,9 @@ export const TargetMaterials: DataTimedMaterial[] = [
     map: "ラヴィリンソス",
     aetheryte: "アポリア本部",
     isMiner: false,
-    start: 8,
-    end: 12,
+    rangeFirst: {
+      start: 8,
+      end: 12,
+    },
   },
 ];
