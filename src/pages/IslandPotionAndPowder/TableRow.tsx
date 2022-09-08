@@ -6,6 +6,8 @@ type TableRowProps = {
   isInput: boolean;
 };
 
+const numberOfDifit = 2;
+
 const TableRow: FC<TableRowProps> = ({ material, isInput }) => {
   const [count, setCount] = useState(0);
   const changeHandler: ChangeEventHandler = (event: ChangeEvent<HTMLInputElement>) =>
@@ -33,10 +35,10 @@ const TableRow: FC<TableRowProps> = ({ material, isInput }) => {
       <th>{material.name}</th>
       <td className="has-text-right">{material.amount}</td>
       {inputCell}
-      <td className="has-text-right">{created.toFixed(1)}</td>
-      <td className="has-text-right">{cycle.toFixed(1)}</td>
-      <td className="has-text-right">{cycleFactories.toFixed(1)}</td>
-      <td className="has-text-right">{series.toFixed(1)}</td>
+      <td className="has-text-right">{created.toFixed(numberOfDifit)}</td>
+      <td className="has-text-right">{cycle.toFixed(numberOfDifit)}</td>
+      <td className="has-text-right">{cycleFactories.toFixed(numberOfDifit)}</td>
+      <td className="has-text-right">{series.toFixed(numberOfDifit)}</td>
     </tr>
   );
 };
