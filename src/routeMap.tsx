@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import LegendMaterials6_2 from "./pages/LegendMaterials6_2";
 import MoonlightAethersand from "./pages/MoonlightAethersand";
 import IslandPotionAndPowder from "./pages/IslandPotionAndPowder";
+import MandervilleWeapons from "./pages/MandervilleWeapons";
+import EquipmentMaterials6_3 from "./pages/EquipmentMaterials6_3";
 
 type SourceState = {
   et: EorzeaTime;
@@ -35,5 +37,15 @@ export const routingMap: RouteNode[] = [
     name: "無人島: ポーションと火薬の必要材料数",
     path: "/island-potion-and-powder",
     element: (ss) => <IslandPotionAndPowder />,
+  },
+  {
+    name: "マンダヴィルウェポン: 全ジョブ必要アイテム数",
+    path: "/manderville-weapons-need-materials-for-all-jobs",
+    element: (_) => <MandervilleWeapons />,
+  },
+  {
+    name: "6.3 ギャザクラ新式装備素材",
+    path: "/equipment-materials-6-3",
+    element: (ss) => <EquipmentMaterials6_3 et={ss.et} />,
   },
 ];
