@@ -142,6 +142,10 @@ export default function MandervilleWeapons(): JSX.Element {
       if (checkObjectAllJobFlags(data.step1st)) {
         step1st.setJobs(data.step1st);
       }
+
+      if (checkObjectAllJobFlags(data.step2nd)) {
+        step2nd.setJobs(data.step2nd);
+      }
     } catch {}
   }, []);
 
