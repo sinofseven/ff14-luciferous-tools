@@ -10,10 +10,12 @@ import "./index.css";
 const KEY_STORAGE = "manderville-weapons";
 type StorageData = {
   step1st: ObjectAllJobFlags;
+  step2nd: ObjectAllJobFlags;
 };
 
 type Progress = {
   step1st: number;
+  step2nd: number;
 };
 
 const jobNames = [
@@ -55,13 +57,36 @@ const checkObjectAllJobFlags = (data: object): boolean => {
 
 export default function MandervilleWeapons(): JSX.Element {
   const step1st = useAllJobCheckboxes();
+  const step2nd = useAllJobCheckboxes();
   const progress: Progress = {
     step1st: Object.values(step1st.jobs).filter((item) => item).length,
+    step2nd: Object.values(step2nd.jobs).filter((item) => item).length,
   };
 
   const clear = (): void => {
     const data: StorageData = {
       step1st: {
+        astrologian: false,
+        bard: false,
+        blackMage: false,
+        dancer: false,
+        darkKnight: false,
+        dragoon: false,
+        gunbreaker: false,
+        machinist: false,
+        monk: false,
+        ninja: false,
+        paladin: false,
+        reaper: false,
+        redMage: false,
+        sage: false,
+        samurai: false,
+        scholar: false,
+        summoner: false,
+        warrior: false,
+        whiteMage: false,
+      },
+      step2nd: {
         astrologian: false,
         bard: false,
         blackMage: false,
@@ -92,6 +117,17 @@ export default function MandervilleWeapons(): JSX.Element {
     step1st.changeHandler(updatedJobs);
     const data: StorageData = {
       step1st: updatedJobs,
+      step2nd: step2nd.jobs,
+    };
+    const raw = JSON.stringify(data);
+    window.localStorage.setItem(KEY_STORAGE, raw);
+  };
+
+  const updateStep2nd = (updatedJobs: ObjectAllJobFlags): void => {
+    step2nd.changeHandler(updatedJobs);
+    const data: StorageData = {
+      step1st: step1st.jobs,
+      step2nd: updatedJobs,
     };
     const raw = JSON.stringify(data);
     window.localStorage.setItem(KEY_STORAGE, raw);
@@ -120,7 +156,7 @@ export default function MandervilleWeapons(): JSX.Element {
           <ol>
             <li>
               <p>
-                <strong>もうひとつのマンダヴィルウェポン</strong>
+                <strong>もうひとつのマンダヴィルウェポン[新規作成]</strong>
                 <span>
                   ({progress.step1st} / {jobNames.length})
                 </span>
@@ -130,9 +166,34 @@ export default function MandervilleWeapons(): JSX.Element {
               </p>
               <ul>
                 <li>
-                  トームストーン天文を使って交換する<strong>希少メテオライト</strong>3個を渡す
+                  トームストーン天文(500個)を使って交換する<strong>希少メテオライト</strong>
+                  を3個を渡す
                 </li>
-                <li>必要数: {(jobNames.length - progress.step1st) * 3}個</li>
+                <li>
+                  必要数: {(jobNames.length - progress.step1st) * 3}個 -&gt; 天文
+                  {((jobNames.length - progress.step1st) * 3 * 500).toLocaleString(undefined)}個
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <strong>驚くべきマンダヴィルウェポン[強化]</strong>
+                <span>
+                  ({progress.step2nd} / {jobNames.length})
+                </span>
+                <button type="button" className="jobs-modal-opener" onClick={step2nd.openHandler}>
+                  jobs
+                </button>
+              </p>
+              <ul>
+                <li>
+                  トームストーン天文(500個)を使って交換する<strong>希少コンドライト</strong>
+                  を3個渡す
+                </li>
+                <li>
+                  必要数: {(jobNames.length - progress.step2nd) * 3}個 -&gt; 天文{" "}
+                  {((jobNames.length - progress.step2nd) * 3 * 500).toLocaleString(undefined)}個
+                </li>
               </ul>
             </li>
           </ol>
@@ -143,6 +204,12 @@ export default function MandervilleWeapons(): JSX.Element {
         jobs={step1st.jobs}
         changeHandler={updateStep1st}
         closeHandler={step1st.closeHandler}
+      />
+      <AllJobCheckbox
+        isShow={step2nd.isShow}
+        jobs={step2nd.jobs}
+        changeHandler={updateStep2nd}
+        closeHandler={step2nd.closeHandler}
       />
     </>
   );
