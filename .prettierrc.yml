@@ -3,5 +3,6 @@ plugins:
 importOrderSeparation: true
 importOrderSortSpecifiers: true
 importOrder:
+  - "^[./]"
   - "^@/(.*)$"
   - "^./(.*)$"

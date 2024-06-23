@@ -1,22 +1,15 @@
 import classNames from "classnames";
+import { Outlet } from "react-router-dom";
 
 import Styles from "@/App.module.css";
+import { CNavbar } from "@/components/c_navbar";
 
 function App() {
   return (
     <>
-      <nav className="navbar is-info">
-        <div className="navbar-brand">
-          <a className="navbar-item title" href="/">
-            FF14 Luciferous Tools
-          </a>
-        </div>
-      </nav>
-      <div
-        className="container is-fullhd"
-        style={{ backgroundColor: "red", minHeight: "93vh" }}
-      >
-        <h1>test</h1>
+      <CNavbar />
+      <div className="container is-fullhd" style={{ minHeight: "93vh" }}>
+        <Outlet />
       </div>
       <div className={classNames(Styles.Footer, "has-background-link-dark")}>
         <h2>Footer Contents</h2>

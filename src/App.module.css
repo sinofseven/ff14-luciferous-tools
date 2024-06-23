@@ -1,9 +1,9 @@
 .Content {
-    min-height: 100vh;
-    background-color: aquamarine;
+  min-height: 100vh;
+  background-color: aquamarine;
 }
 
 .Footer {
-    min-height: 20vh;
-    background-color: darkkhaki;
+  min-height: 20vh;
+  background-color: darkkhaki;
 }
