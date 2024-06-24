@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
+import { resetPosition, resetTargets } from "../../usecases/search_params";
 import { ALL_MAPS } from "../../variables/var_eorzea_g10";
-import {
-  SEARCH_KEY_CURRENT_POSITION,
-  SEARCH_KEY_TREASURES,
-} from "../../variables/var_search_params";
 import { useMapTreasureCards, useTableRowTreasures } from "./hooks";
 
 export function VCG10Editor() {
@@ -25,14 +22,14 @@ export function VCG10Editor() {
   ));
 
   function resetAll() {
-    searchParams.delete(SEARCH_KEY_TREASURES);
-    searchParams.delete(SEARCH_KEY_CURRENT_POSITION);
-    setSearchParams(searchParams);
+    let fixedSearchParams = resetTargets(searchParams);
+    fixedSearchParams = resetPosition(fixedSearchParams);
+    setSearchParams(fixedSearchParams);
   }
 
   function resetCurrentPosition() {
-    searchParams.delete(SEARCH_KEY_CURRENT_POSITION);
-    setSearchParams(searchParams);
+    const fixedSearchParams = resetPosition(searchParams);
+    setSearchParams(fixedSearchParams);
   }
 
   const allMapTreasures = useMapTreasureCards(currentMapId);
@@ -67,6 +64,7 @@ export function VCG10Editor() {
               <th></th>
               <th>現在地</th>
               <th>地図</th>
+              <th>ユーザー</th>
             </tr>
           </thead>
           <tbody>{allTableRows}</tbody>
